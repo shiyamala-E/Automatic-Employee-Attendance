@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration</title>
+    <style>
+    .container{
+     width:15%;
+     margin:0 auto;}
+   </style>
+</head>
+<body>
+
+
+    <center><h2>Employee Registration Form</h2></center>
+    <div class="container">
+    <form method="post" onsubmit="/register">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="mobile">Mobile Number:</label><br>
+        <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="registration_num">Registration Number:</label><br>
+        <input type="tel" id="registration_num" name="registration_num" required><br><br>
+        <br>
+        <button type="submit">Register</button>
+    </form>
+   </div>
+</body>
+</html>

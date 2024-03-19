@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check In/Out</title>
+</head>
+<body>
+    <h1>Check In/Out</h1>
+    <button onclick="takeAttendance()">Take Attendance</button>
+    <script>
+        function takeAttendance() {
+            // Send a POST request to the server to start capturing the image and recognizing faces
+            fetch('/check_in_out', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    throw new Error('Failed to take attendance');
+                }
+            })
+            .then(data => {
+                // Display the response message
+                alert(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to take attendance');
+            });
+        }
+    </script>
+</body>
+</html>
